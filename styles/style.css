@@ -1,0 +1,53 @@
+/* p {
+    color: red;
+    width: 500px;
+    border: 1px solid black;
+}
+
+p, li, h1 {
+    color: red;
+} */
+
+/* 元素选择器，也称标签选择器/类型选择器 */
+/* ID 选择器 #my-id */
+/* 类选择器 .my-class */
+/* 伪类选择器 特定状态下的元素 a:hover */
+/* 属性选择器 img[src] 选择 img 标签有 src 的那些 */
+
+html {
+    /* 基础字号为 10 像素 */
+    font-size: 10px;
+    /* 输出 google fonts */
+    font-family: 'Open Sans', sans-serifs;
+    background-color: #00539f;
+}
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #ff9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #00539f;
+    text-shadow: 3px 3px 1px black;
+    /* border: 1px solid red; */
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+p, li {
+    font-size: 16px;
+    /* 行高为2倍字体大小，即上下行距为 0.5 */
+    line-height: 2;
+    letter-spacing: 1px;
+}
