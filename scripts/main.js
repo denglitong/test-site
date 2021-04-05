@@ -26,7 +26,7 @@ let myHeading = document.querySelector('h1');
 function setUserName() {
     // 弹出对话框，输入数据
     let myName = prompt('请输入你的名字。');
-    if (!myName || myName === null) {
+    if (!myName) {
         setUserName();
     } else {
         localStorage.setItem('name', myName);
