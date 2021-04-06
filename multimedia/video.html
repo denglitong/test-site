@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video In HTML</title>
+</head>
+<body>
+<video src="videos/rabbit320.webm" controls>
+  <!--video标签的内容其实是后背内容，当浏览器不支持video标签的时候显示-->
+  <p>你的浏览器不支持 HTML5 视频。可点击<a href="videos/rabbit320.webm">此链接</a>观看</p>
+  
+<!-- mp3/mp4/webm 这些术语叫做容器格式，
+     它们定义了构成媒体文件的音频轨道和视频轨道的存储结构、元数据、编码译码器等 -->
+<!-- Metadata: movie title, duration, track types,
+     Audio Tracks: audio track 0, audio track 1, audio track 2, ... 每个音频轨道都使用音频解码器进行编码
+     Video Tracks: video track 0, video track 1, video track 2, ... 每个视频轨道都使用视频解码器进行编码
+     Text Tracks: text track 0, text track 1, text track 2, ...
+     -->
+</video>
+
+<video controls poster="images/poster.png">
+  <source src="videos/rabbit320.mp4" type="video/mp4">
+  <source src="videos/rabbit320.webm" type="video/webm">
+  <track src="vtt/rabbit320.vtt" kind="subtitles" srclang="en">
+  <p>你的浏览器不支持 HTML5 视频。可点击<a href="videos/rabbit320.mp4">此链接</a>观看</p>
+</video>
+
+<!-- autoplay 自动播放 loop 循环播放 muted 播放时静音 -->
+<!-- preload 这个属性用来缓冲较大的文件 none:不缓冲 auto:页面加载后缓冲媒体文件 metadata:仅缓冲文件的元数据 -->
+<video controls width="400" height="400"
+       autoplay loop muted
+       poster="images/poster.png"
+       preload="metadata">
+  <source src="videos/rabbit320.mp4" type="video/mp4">
+  <source src="videos/rabbit320.webm" type="video/webm">
+  <p>你的浏览器不支持 HTML5 视频。可点击<a href="videos/rabbit320.mp4">此链接</a>观看</p>
+</video>
+
+<audio controls>
+  <source src="audios/viper.mp3" type="audio/mp3">
+  <source src="audios/viper.ogg" type="audio/ogg">
+  <p>你的浏览器不支持 HTML5 音频，可点击<a href="audios/viper.mp3">此链接</a>收听。</p>
+</audio>
+
+<!--
+  // 重新播放媒体
+  const mediaElem = document.getElementById("my-media-element");
+  mediaElem.load();
+  
+  // 音轨增删事件监听
+  const mediaElem = document.querySelector("video");
+  mediaElem.audioTracks.onaddtrack = function(event) {
+    audioTrackAdded(event.track);
+  }
+-->
+
+<!--
+  音频的文本副本
+  WebVTT 是一个格式，用来编写文本文件，这些字符串会带有元数据，用来描述字符串在视频中显示的时间，以及位置、样式信息
+  这些字符串叫做 cues, 最常见的 cues 如下：
+    subtitles: 通过添加翻译字幕，来帮助那些听不懂外国语言的人们理解音频当中的内容
+    captions: 同步翻译对白，或是描述一些有重要信息的声音，来帮助那些不能听音频的人们理解音频中的内容
+    time descriptions: 将文字转换为音频，用于服务那些有视觉障碍的人
+  -->
+<video controls>
+  <source src="videos/sintel-short.mp4" type="video/mp4">
+  <source src="videos/sintel-short.webm" type="video/webm">
+  <track kind="subtitles" src="vtt/sintel-en.vtt" srclang="en">
+</video>
+
+</body>
+</html>
