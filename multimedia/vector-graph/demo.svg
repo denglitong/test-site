@@ -1,0 +1,18 @@
+<!-- 位图 和 矢量图
+ 位图：使用像素网格来定义 - 一个位图文件精确包含了 每个像素的位置和它的色彩信息
+    流行的位图格式包括Bitmap(.bmp)，PNG(.png)，JPEG(.jpg)，和GIT(.gif)
+
+ 矢量图：使用算法来定义 - 一个矢量图文件包含了图形和路径的定义，
+    电脑可以根据这些定义计算出它们在屏幕上渲染是呈现的样式
+    当放大的时候矢量图会重新计算渲染不会失真，而位图会拉伸像素而失真
+
+ SVG 是用于描述矢量图像的XML语言
+
+ -->
+
+<svg version="1.1" baseProfile="full"
+    width="300" height="200"
+    xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="black"></rect>
+    <circle cx="150" cy="100" r="90" fill="blue"></circle>
+</svg>
