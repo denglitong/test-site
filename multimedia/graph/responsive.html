@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--强制让手机浏览器采用它们真实可视窗口的宽度来加载网页
+  （有些手机浏览器会提供不真实的可视窗口宽度）-->
+  <meta name="viewport" content="width=device-width">
+  <title>Responsive HTML images demo</title>
+  <style>
+    #img2 {
+        width: 320px;
+    }
+  </style>
+</head>
+<body>
+
+<!--响应式图片-->
+<img srcset="elva-fairy-320w.jpeg 320w,
+            elva-fairy-480w.jpeg 480w,
+            elva-fairy-800w.jpeg 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="elva-fairy-800w.jpeg" alt="Elva dressed as a fairy">
+
+<!--分辨率切换
+  默认值是 1.x，即1倍像素，一个设备像素表示一个CSS像素
+  如果设备有更高分辨率，两个或更多的设备像素表示一个CSS像素，
+  那么 2.x 对应的src图像就会被加载显示-->
+<img id="img2" srcset="elva-fairy-320w.jpeg,
+            elva-fairy-480w.jpeg 1.5x,
+            elva-fairy-640w.jpeg 2x"
+     src="elva-fairy-640w.jpeg" alt="Elva dressed as a fairy">
+
+<picture>
+  <!--从上到下匹配media属性，匹配即展示; 当使用 media属性时不要在source的 sizes 中也提供媒体条件-->
+  <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpeg">
+  <source media="(min-width: 800px)" srcset="elva-800w.jpeg">
+  <!--如果浏览器不支持picture元素时，下面的img可以作为后备方案-->
+  <img src="elva-800w.jpeg" alt="Chris standing up holding his daughter Elva">
+</picture>
+
+<!--不要使用media属性除非你确实需要美术设计-->
+<picture>
+  <!--可以在type属性提供MIME类型，这样浏览器就能立即拒绝不支持的文件类型-->
+  <source srcset="pyramid.svg" type="media/svg+xml">
+  <source srcset="pyramid.webp" type="media/webp">
+  <img src="pyramid.png" alt="regular pyramid built from four equilateral triangles">
+</picture>
+
+</body>
+</html>
