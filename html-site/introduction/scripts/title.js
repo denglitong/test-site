@@ -1,6 +1,6 @@
 const list = document.createElement('ul');
 const info = document.createElement('p');
-const html = document.querySelector('html');
+const html = document.querySelector('html-site');
 
 info.textContent = '以下是一个动态列表。点击列表外任意位置可添加新的列表项。点击已有的列表项可修改内容。';
 
