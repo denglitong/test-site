@@ -1,0 +1,46 @@
+h1 {
+    color: red;
+}
+
+p {
+    color: green;
+}
+
+li {
+    list-style-type: square;
+}
+
+/*.special*/
+li.special,
+span.special {
+    color: orange;
+    font-weight: bold;
+}
+
+/* 包含选择符：在两个选择器直接加一个空格， li 下面的 em */
+li em {
+    color: rebeccapurple;
+}
+
+/* 相邻选择符：在两个选择器直接添加一个 + 号，h1 面相邻的第一个 p */
+h1 + p {
+    font-size: 200%;
+}
+
+a:hover {
+    text-decoration: none;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: green;
+}
+
+/*组合多种选择器*/
+/* body 下面的 h1 后面相邻的第一个p 下面的 .special 类 */
+body h1 + p .special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
