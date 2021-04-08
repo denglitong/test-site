@@ -3,7 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>开始学习 CSS</title>
+  <!--1.外部样式表（推荐）-->
   <link rel="stylesheet" href="style.css">
+  <!--2.内部样式表，样式直接放在HTML文件中-->
+  <style>
+    h1 {
+        color: blue;
+        background-color: yellow;
+        border: 1px solid blue;
+    }
+    
+    p {
+        color: red;
+    }
+  </style>
+  <!-- 3.内联样式：样式直接内联到HTML元素的属性之中（不推荐） -->
+<!-- <p style="color: red; backgroud-color: yellow;"></p> -->
 </head>
 <body>
 <h1>我是一级标题</h1>
@@ -18,6 +33,12 @@
   <li class="special">项目2</li>
   <li>项目 <em>三</em></li>
 </ul>
+
+<div class="outer">
+  <div class="box">The inner box is 90% - 30px.</div>
+</div>
+
+<div class="rotate"></div>
 
 </body>
 </html>

@@ -1,3 +1,6 @@
+/* import rules */
+@import "common.css";
+
 h1 {
     color: red;
 }
@@ -43,4 +46,39 @@ body h1 + p .special {
     color: yellow;
     background-color: black;
     padding: 5px;
+}
+
+/* CSS属性生效有 级联规则 和 专用规则
+   级联规则：出现在后面的覆盖前面的
+   */
+
+/* CSS中的属性和值都是区分大小写的 */
+
+.outer {
+    border: 5px solid black;
+}
+
+.outer .box {
+    padding: 10px;
+    width: calc(90% - 30px);
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.rotate {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn);
+}
+
+body {
+    background-color: pink;
+}
+
+@media (min-width: 30em) {
+    body {
+        background-color: blue;
+    }
 }
