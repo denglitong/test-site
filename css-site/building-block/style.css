@@ -13,3 +13,55 @@
 !important 可覆盖上述所有的优先级，不过需要很小心的使用
 
 */
+
+/* CSS选择器 */
+/*类型选择器*/
+h1 {}
+/*类选择器*/
+.box {}
+/*ID选择器*/
+#unique {}
+/*属性选择器*/
+a[title] {}
+a[href="https://example.com"] {}
+/*伪类选择器*/
+a:hover {}
+p:first-child
+/*伪元素选择器*/
+p::first-line {}
+/*后代选择器*/
+h1 p {
+    color: darkorchid;
+}
+/*子代选择器*/
+h1 > p {
+    /*子代选择器和后代选择器是一样的*/
+    /*color: black;*/
+    font-style: italic;
+}
+/*相邻兄弟选择器*/
+h1 + p {
+    background-color: #97DB9A;
+}
+/*通用兄弟选择器*/
+h1 ~ p {
+    border: 1px solid red;
+}
+
+/* article 下的第一个子元素，不管它是什么元素 */
+article :first-child {}
+/* 作为其他元素的第一个子元素的article元素 */
+article:first-child {}
+/* 明确表达，避免混淆：article 下的第一个子元素 */
+article *:first-child {}
+
+.class {}
+element.class {}
+
+/* class1 && class2 标记的元素 */
+.class1.class2 {}
+
+#id {}
+element#id {}
+
+/* 使用 class 比 ID 好 */
