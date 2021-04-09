@@ -65,3 +65,15 @@ element.class {}
 element#id {}
 
 /* 使用 class 比 ID 好 */
+
+/*
+属性选择器
+[attr]  a[title]
+[attr=value]    a[href="https://example.com"]
+[attr~=value]   p[class~="special"] <p class="special anyothers">
+[attr|=value]   div[lang|="zh"] <div lang="zh"> or <div lang="zh-somethings">
+[attr^=value]   li[class^="box-"]
+[attr$=value]   li[class$="-box"]
+[attr*=value]   li[class*="box"]
+[attr some_rules i]     li[class^="a" i] 大小写不敏感
+*/
