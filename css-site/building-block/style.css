@@ -77,3 +77,47 @@ element#id {}
 [attr*=value]   li[class*="box"]
 [attr some_rules i]     li[class^="a" i] 大小写不敏感
 */
+
+/*
+
+伪类选择器：用于选择处于特定状态的元素，就像是你为它们加入了类一样
+:first-child
+:last-child
+:only-child 匹配没有任何兄弟元素的子元素
+:invalid 表示任意内容未通过验证的<input>元素或<form>元素
+:valid 匹配诸如<input>元素的处于可用的元素
+:default
+:dir
+:disabled
+:empty
+:first-of-type
+:link 匹配未曾访问的链接
+:visited 匹配已访问链接
+:optional 匹配不是必填的 form 元素
+:required 匹配必填的 form 元素
+:read-only 匹配用户不可更改的元素
+:read-write 匹配用户可更改的元素
+
+用户行为伪类/动态伪类
+:hover
+:focus
+:focus-visible
+:focus-within
+:active
+:any-link
+:blank
+:checked
+:current
+
+
+伪元素：与伪类相似，表现地像你往标记文本中加入全新的HTML元素一样，然后再向这些元素应用样式
+::first-line    article p:first-child::first-line article下的第一个p的第一个行
+::before(content:)
+::after(content:)
+::first-letter 匹配元素的第一个字母
+::first-line 匹配包含次伪元素的第一行
+::selection 匹配文档中被选择的那部分
+::grammar-error 匹配文档中包含了浏览器标记的语法错误的那部分
+::spelling-error 匹配文档中包含了浏览器标记的拼写错误的那部分
+
+*/
