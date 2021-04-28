@@ -121,3 +121,21 @@ element#id {}
 ::spelling-error 匹配文档中包含了浏览器标记的拼写错误的那部分
 
 */
+
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Selectors_Tasks */
+a:link {
+    text-decoration: orange;
+}
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: green;
+}
+.container > :first-of-type {
+    font-size: 150%;
+}
+tr:nth-child(2n+1) {
+    background-color: #333;
+    color: white;
+}
