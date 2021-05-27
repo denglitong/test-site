@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>How to structure form</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Fruit juice size</legend>
+        <p>
+          <input type="radio" name="size" id="size_1" value="small">
+          <label for="size_1">Small</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_2" value="medium">
+          <label for="size_2">Medium</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_3" value="large">
+          <label for="size_3">Large</label>
+        </p>
+      </fieldset>
+    </form>
+    
+    <form>
+      <p>
+        <input type="checkbox" id="taste_1" name="taste_cherry" value="1">
+        <label for="taste_1">I like cherry</label>
+      </p>
+      <p>
+        <input type="checkbox" id="taste_2" name="taste_banana" value="1">
+        <label for="taste_2">I like banana</label>
+      </p>
+    </form>
+    
+    <form>
+      <!-- 一个部件上放置多个标签，应嵌套在一个<label>元素中 -->
+      <div>
+        <!-- <abbr>代表缩写，可通过可选的 title 属性来提供完整的描述
+        （若使用title属性则<abbr>必须包含完整的描述内容） -->
+        <label for="username">Name:<abbr title="required">*</abbr></label>
+        <input id="username" type="text" name="username">
+      </div>
+    </form>
+  </body>
+</html>

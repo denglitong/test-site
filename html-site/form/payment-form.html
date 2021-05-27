@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Payment form</title>
+    <style>
+      h1 {
+        margin-top: 0;
+      }
+      
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      form {
+        margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+      }
+      
+      div + div {
+        margin-top: 1em;
+      }
+      
+      label span {
+        display: inline-block;
+        width: 120px;
+        text-align: right;
+      }
+      
+      input, textarea {
+        font: 1em sans-serif;
+        width: 250px;
+        /* box-sizing 定义了 user_agent 应该如何计算一个元素的总宽度和总高度；
+         有 content-box, border-box 两个值；
+         https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing */
+        box-sizing: border-box;
+        border: 1px solid #999;
+      }
+      
+      input[type=checkbox], input[type=radio] {
+        width: auto;
+        border: none;
+      }
+      
+      input:focus, textarea:focus {
+        border-color: #000000;
+      }
+      
+      textarea {
+        vertical-align: top;
+        height: 5em;
+        /* 控制文本区域是否可调整大小
+         vertical 表示只有垂直方向可调整大小 */
+        resize: vertical;
+      }
+      
+      fieldset {
+        width: 250px;
+        box-sizing: border-box;
+        margin-left: 136px;
+        border: 1px solid #999;
+      }
+      
+      button {
+        margin: 20px 0 0 124px;
+      }
+      
+      label {
+        position: relative;
+      }
+      
+      label em {
+        position: absolute;
+        right: 5px;
+        top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>Payment form</h1>
+      <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+      
+      <section>
+        <h2>Contact information</h2>
+        <fieldset>
+          <legend>Title</legend>
+          <ul>
+            <li>
+              <label for="title_1">
+                <input type="radio" id="title_1" name="title" value="K">
+                King
+              </label>
+            </li>
+            <li>
+              <label for="title_2">
+                <input type="radio" id="title_2" name="title" value="Q">
+                Queen
+              </label>
+            </li>
+            <li>
+              <label for="title_3">
+                <input type="radio" id="title_3" name="title" value="J">
+                Joker
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <p>
+          <label for="name">
+            <span>Name:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="name" name="username">
+        </p>
+        <p>
+          <label for="email">
+            <span>E-mail:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="email" id="email" name="usermail">
+        </p>
+        <p>
+          <label for="password">
+            <span>Password:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="password" name="password">
+        </p>
+      </section>
+      
+      <section>
+        <h2>Payment information</h2>
+        <p>
+          <label for="card">
+            <span>Card type:</span>
+          </label>
+          <select id="card" name="usercard">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </p>
+        <p>
+          <label for="number">
+            <span>Card number:</span>
+            <strong><abbr title="required">*</abbr></strong>
+            <input type="number" id="number" name="cardname">
+          </label>
+        </p>
+        <p>
+          <label for="date">
+            <span>Expiration date:</span>
+            <strong><abbr title="required">*</abbr></strong>
+            <em>formatted as mm/yy</em>
+          </label>
+          <input type="date" id="date" name="expiration">
+        </p>
+      </section>
+      
+      <p>
+        <button type="submit">Validate the payment</button>
+      </p>
+    </form>
+  </body>
+</html>
