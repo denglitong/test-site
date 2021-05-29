@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Basic form controls</title>
+    <style>
+      textarea {
+        resize: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <p>
+        <label for="search">搜索框：</label>
+        <input type="search" id="search" name="search">
+      </p>
+      <p>
+        <label for="tel">电话号码：</label>
+        <input type="tel" id="tel" name="tel">
+      </p>
+      <p>
+        <label for="url">URL：</label>
+        <input type="url" id="url" name="url">
+      </p>
+      <p>
+        <button type="submit">Submit</button>
+      </p>
+      <p>
+        <label for="textarea">文本框：</label>
+        <textarea cols="30" rows="10" id="textarea"></textarea>
+      </p>
+      <p>
+        <label for="simple">选择框：</label>
+        <select id="simple" name="simple">
+          <option>Banana</option>
+          <option>Cherry</option>
+          <option>Lemon</option>
+        </select>
+      </p>
+      <p>
+        <label for="groups">分组选择框：</label>
+        <select id="groups" name="groups">
+          <optgroup label="fruits">
+            <option>Banana</option>
+            <option selected>Cherry</option>
+            <option>Lemon</option>
+          </optgroup>
+          <optgroup label="vegetables">
+            <option>Carrot</option>
+            <option>Eggplant</option>
+            <option>Potato</option>
+          </optgroup>
+        </select>
+      </p>
+      <p>
+        <label for="multiple">多选选择框：</label>
+        <select multiple id="multiple" name="multiple">
+          <option>Banana</option>
+          <option>Cherry</option>
+          <option>Lemon</option>
+        </select>
+      </p>
+      <p>
+        <label for="myFruit">自动补全输入框：</label>
+        <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+        
+        <datalist id="mySuggestion">
+          <option>Apple</option>
+          <option>Banana</option>
+          <option>Blackberry</option>
+          <option>Blueberry</option>
+          <option>Lemon</option>
+          <option>Lychee</option>
+          <option>Peach</option>
+          <option>Pear</option>
+          
+          <!-- 数据列表后备（在不支持 datalist 的浏览器显示默认备用） -->
+          <!--<label for="suggestion">or pick a fruit</label>-->
+          <!--<select id="suggestion" name="altFruit">-->
+          <!--  <option>Apple</option>-->
+          <!--  <option>Banana</option>-->
+          <!--  <option>Blackberry</option>-->
+          <!--  <option>Blueberry</option>-->
+          <!--  <option>Lemon</option>-->
+          <!--  <option>Lychee</option>-->
+          <!--  <option>Peach</option>-->
+          <!--  <option>Pear</option>-->
+          <!--</select>-->
+        </datalist>
+      </p>
+      <p>
+        <label for="carrots">复选框：</label>
+        <input type="checkbox" checked id="carrots" name="carrots" value="carrots">
+      </p>
+      <p>
+        <label for="soup">单选按钮：</label>
+        <input type="radio" checked id="soup_1" name="meal">
+        <input type="radio" id="soup_2" name="meal">
+      </p>
+      <p>
+        <!-- button 元素可容纳 HTML 元素并可操纵更多样式 -->
+        <button type="submit">This is a <br><strong>submit button</strong></button>
+        <input type="submit" value="This is a submit button">
+      </p>
+      <p>
+        <button type="reset">This is a <br><strong>reset button</strong></button>
+        <input type="reset" value="This is a reset button">
+      </p>
+      <p>
+        <button type="button">This is a <br><strong>anonymous button</strong></button>
+        <input type="button" value="This is a anonymous button">
+      </p>
+      <p>
+        <label for="age">数字：</label>
+        <input type="number" name="age" id="age" min="1" max="10" step="1">
+      </p>
+      <p>
+        <label for="beans">滑块：</label>
+        <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+        <span class="beancount"></span>
+        <!-- 滑块的滑动的值需要体现在元素的内容上以达到可见的效果 -->
+        <script>
+          var beans = document.querySelector("#beans");
+          var count = document.querySelector(".beancount");
+          
+          // 为啥这里的 .value, .oninput 在编辑器里提示不出来？
+          count.textContent = beans.value;
+          beans.oninput = function () {
+            count.textContent = beans.value;
+          }
+        </script>
+      </p>
+      <p>
+        <label for="datetime">本地时间：</label>
+        <input type="datetime-local" name="datetime" id="datetime">
+        <!-- 2021-05-29T09:23 -->
+        <span id="datetime-val"></span>
+        <script>
+          var datetime = document.querySelector("#datetime");
+          var datetimeVal = document.querySelector("#datetime-val");
+          
+          datetimeVal.textContent = datetime.value;
+          datetime.oninput = function () {
+            datetimeVal.textContent = datetime.value;
+          }
+        </script>
+      </p>
+      <p>
+        <label for="month">月份：</label>
+        <input type="month" name="month" id="month">
+        <!-- 2021-05 -->
+        <span id="month-val"></span>
+        <script>
+          var month = document.querySelector("#month");
+          var monthVal = document.querySelector("#month-val");
+          
+          monthVal.textContent = month.value;
+          month.oninput = function () {
+            monthVal.textContent = month.value;
+          }
+        </script>
+      </p>
+      <p>
+        <label for="time">时间：</label>
+        <input type="time" name="time" id="time">
+        <!-- 09:28 -->
+        <span id="time-val"></span>
+        <script>
+          var time = document.querySelector("#time");
+          var timeVal = document.querySelector("#time-val");
+          
+          timeVal.textContent = time.value;
+          time.oninput = function () {
+            timeVal.textContent = time.value;
+          }
+        </script>
+      </p>
+      <p>
+        <label for="week">星期：</label>
+        <input type="week" name="week" id="week">
+        <!-- 2021-W21 -->
+        <span id="week-val"></span>
+        <script>
+          var week = document.querySelector("#week");
+          var weekVal = document.querySelector("#week-val");
+          
+          weekVal.textContent = week.value;
+          week.oninput = function () {
+            weekVal.textContent = week.value;
+          }
+        </script>
+      </p>
+      <p>
+        <label for="color">拾色器：</label>
+        <input type="color" name="color" id="color">
+        <!-- #cccccc -->
+        <span id="color-val"></span>
+        <script>
+          var color = document.querySelector("#color");
+          var colorVal = document.querySelector("#color-val");
+          
+          colorVal.textContent = color.value;
+          color.oninput = function () {
+            colorVal.textContent = color.value;
+          }
+        </script>
+      </p>
+      <p>
+        <label for="file">文件选择器：</label>
+        <input type="file" name="file" id="file" accept="image/*" multiple>
+        <!-- 隐藏内容 -->
+        <input type="hidden" id="timestamp" name="timestamp" value="1286705410">
+      </p>
+      <p>
+        <label for="img">图像按钮：</label>
+        <input type="image" id="img" name="img" alt="Click me!"
+               src="./big-white.png" width="200" height="200">
+        <!-- when click whe url is: ?img.x=&img.y= -->
+      </p>
+      <p>
+        <label for="progress">进度条：</label>
+        <progress id="progress" max="100" value="75">75 / 100</progress>
+      </p>
+      <p>
+        <label for="meter">仪表盘：</label>
+        <!-- 仪表盘的颜色会随值在 low-high 不同区间而变化 -->
+        <meter id="meter" min="0" max="100" value="75" low="33" high="66" optimum="50">
+          75
+        </meter>
+      </p>
+    </form>
+  </body>
+</html>
