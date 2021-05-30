@@ -1,0 +1,56 @@
+<!--
+  处理旧版本的浏览器是工作的一部分，
+  有一些技巧可以帮助你解决旧版本浏览导致 80% 的问题；
+    -- 最重要的事情是阅读那些浏览器的文档，并尝试理解通用的解决模式；
+    -- HTML 表单是否支持 CSS 是最大的问题，这是正确的开始；
+      - https://developer.mozilla.org/zh-CN/docs/Learn/Forms/HTML_forms_in_legacy_browsers
+    -- 优雅地降级（Graceful degradation）
+    
+  表单按钮
+  -- <input type="button"> 采用这种方式时应用CSS 样式会变得复杂；
+  -- <button> 采用这种方式时在某些旧浏览器有 bug 提交的是开闭标签直接的 HTML 内容而不是发送 value 值
+      最好总是设置 type="submit" <button type="submit"> 因为一些浏览器不使用其作为默认值
+      
+  JavaScript 在现代浏览器是很棒的技术，但在旧式浏览器中可能存在很多的问题
+  - API 的兼容性是最大的问题；一个 polyfill 库是一些 JavaScript 用于填补旧式浏览器的功能缺失
+    - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Forms in legacy browsers</title>
+    <style>
+      /* 这在一些浏览器可能是不能执行的 */
+      input[type=number] {
+      }
+      
+      /* 这在所有的浏览器都是可以执行的 */
+      input.number {
+      }
+      
+      /* 在某些浏览器可能会失败；
+      如果理解不了 input[type=number]，则跳过的是整个规则 */
+      input[type=number],
+      input.number {
+      }
+    
+    </style>
+  </head>
+  <body>
+    <form>
+      <p>
+        <label for="myColor">Pick a color:</label>
+        <!-- 如果浏览器不支持 type=color 将回退为默认的 type=text  -->
+        <input type="color" id="myColor" name="color">
+      </p>
+      <p>
+        <label for="number">Input a number:</label>
+        <input type="number" class="number" id="number" name="number">
+      </p>
+      <p>
+        <button type="submit">提交</button>
+      </p>
+    </form>
+  </body>
+</html>
