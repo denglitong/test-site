@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Styling web forms</title>
+    <style>
+      #search_1 {
+        border: 1px solid #999;
+        border-radius: 0;
+      }
+      
+      #search_2 {
+        border: 1px solid #999;
+        border-radius: 0;
+        /* 基于 WebKit 的浏览器（Chrome, Safari 等） */
+        -webkit-appearance: none;
+      }
+      
+      /* 字体和文本 */
+      button, input, select, textarea {
+        /* 使用同一的字体 */
+        font-family: inherit;
+        font-size: 100%;
+      }
+      
+      /* 表单小部件有自己的边框，填充和边距的规则，如果想设置小部件相同的大小，必须使用 box-sizing 属性 */
+      input, textarea, select, button {
+        width: 150px;
+        margin: 0;
+        
+        -webkit-box-sizing: border-box; /* 针对基于 webkit 的旧版浏览器*/
+        -moz-box-sizing: border-box; /* 针对基于 Gecko 的旧版浏览器 */
+        box-sizing: border-box;
+      }
+      
+      /* position: legend
+        在 HTML 中无法改变它的绝对位置，无法让其离开顶部边框 */
+      legend {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      
+      /* position: textarea
+        默认情况下 textarea 是内联元素，与文本底线对齐，这很少是我们想要的效果 */
+      textarea {
+        display: inline-block;
+        vertical-align: top; /* 垂直对齐 */
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <p>
+        <label>Search 1</label>
+        <input type="search" id="search_1">
+      </p>
+      <p>
+        <label>Search 2</label>
+        <input type="search" id="search_2">
+      </p>
+    </form>
+    <fieldset>
+      <legend>Hi!</legend>
+      <h1>Hello</h1>
+    </fieldset>
+  </body>
+</html>
